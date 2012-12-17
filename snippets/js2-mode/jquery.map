@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: jquery.map
+# key: j.m
+# --
+$.map(${1:xs}, function (x) { $0 });

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: fn.method
+# key: fn.m
+# --
+${1:Method} : function ($2) {
+$0
+}${3:,}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: jquery.selector
+# key: j.s
+# --
+$("$0")

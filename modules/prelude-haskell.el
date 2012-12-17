@@ -34,19 +34,22 @@
 ;;; Code:
 
 (require 'prelude-programming)
+(require 'hs-lint)
 
 (eval-after-load 'haskell-mode
   '(progn
      (defun prelude-haskell-mode-defaults ()
        (subword-mode +1)
        (turn-on-haskell-doc-mode)
-       (turn-on-haskell-indentation))
+       (turn-on-haskell-indentation)
+       (local-set-key "\C-cl" 'hs-lint))
 
      (setq prelude-haskell-mode-hook 'prelude-haskell-mode-defaults)
 
      (add-hook 'haskell-mode-hook (lambda ()
-                                    (run-hooks 'prelude-haskell-mode-hook)))))
+                                    (run-hooks 'prelude-haskell-mode-hook)
+                                    (local-set-key [f9] 'haskell-mode-stylish-buffer)))
 
+     (add-to-list 'auto-mode-alist '("\\.tpl$" . nxml-mode))))
+     
 (provide 'prelude-haskell)
-
-;;; prelude-haskell.el ends here

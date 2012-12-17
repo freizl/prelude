@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: var.0
+# key: var
+# --
+$1 = $0;

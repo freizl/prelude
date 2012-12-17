@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: fn.var
+# key: fn.v
+# --
+var ${1:method} = function $1 ($2) {
+$0
+}${3:,}

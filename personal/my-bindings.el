@@ -1,0 +1,17 @@
+
+(global-set-key (kbd "C-h") 'backward-delete-char)
+(global-set-key (kbd "C-_") 'help-command)
+
+;(global-set-key [f5] 'occur)
+;(global-set-key [f5] 'speedbar)
+;(global-set-key [f5] 'call-last-kbd-macro)
+;(global-set-key [f6] 'browse-url)
+(global-set-key [f7] 'linum-mode)
+;(global-set-key [S-f7] 'global-linum-mode)
+(global-set-key [f11] 'toggle-truncate-lines)
+(global-set-key [S-f12] 'longlines-mode)
+(global-set-key "\M-]" 'other-window)
+(global-set-key "\M-[" '(lambda () (interactive) (other-window -1)))
+(global-set-key [\C-next] 'next-buffer)
+(global-set-key [\C-prior] 'previous-buffer)
+(global-set-key "\M-#" 'query-replace-regexp)
