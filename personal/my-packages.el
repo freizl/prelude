@@ -1,3 +1,5 @@
+;;; markdown
+(setq markdown-command "pandoc")
 
 ;;; powerline
 (require 'powerline)
