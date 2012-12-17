@@ -1,6 +1,7 @@
 
-;;; Special thing when working with windows 
+;;; Special thing when working with windows
 
+(custom-set-faces '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "C:\\Users\\haiswu\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe")
@@ -15,6 +16,6 @@
 (setq inferior-js-program-command "java -jar C:/Users/haiswu/Downloads/rhino1_7R4/js.jar")
 
 (shell)
+(server-start)
 
 (provide 'my-win)
-
