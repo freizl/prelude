@@ -1,8 +1,12 @@
 ;(disable-theme 'zenburn)
 ;(load-theme 'whiteboard)
 
-(setq prelude-flyspell nil)
-(setq global-hi-lock-mode 1)
+(setq prelude-flyspell nil
+      global-hi-lock-mode 1
+      next-line-add-newlines t
+      kill-whole-line t
+      winner-mode t)
+
 (set-scroll-bar-mode nil)
 (setq-default tab-width 4)
 
@@ -16,23 +20,23 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Enable backup files
-;(setq delete-old-versions t
-;      kept-old-versions 1
-;      kept-new-versions 3
-;      version-control t)
-;(setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
-                                  
+(setq delete-old-versions t
+      kept-old-versions 1
+      kept-new-versions 3
+      version-control t)
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
+
 ; Auto-saves
-;(defvar autosave-dir "~/.emacs.d/auto-saves/")
-;(make-directory autosave-dir t)
-;(defun auto-save-file-name-p (filename)
-;  (string-match "^#.*#$" (file-name-nondirectory filename)))
-;(defun make-auto-save-file-name ()
- ; (concat autosave-dir
- ;     (if buffer-file-name
- ;         (concat "#" (file-name-nondirectory buffer-file-name) "#")
-  ;      (expand-file-name
-  ;       (concat "#%" (buffer-name) "#")))))
+(defvar autosave-dir "~/.emacs.d/auto-saves/")
+(make-directory autosave-dir t)
+(defun auto-save-file-name-p (filename)
+  (string-match "^#.*#$" (file-name-nondirectory filename)))
+(defun make-auto-save-file-name ()
+  (concat autosave-dir
+          (if buffer-file-name
+              (concat "#" (file-name-nondirectory buffer-file-name) "#")
+            (expand-file-name
+             (concat "#%" (buffer-name) "#")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Chinese Calendar
@@ -51,7 +55,7 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;; 
+;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun platform-special ()
@@ -60,4 +64,3 @@
          (require 'my-win))))
 
 (platform-special)
-

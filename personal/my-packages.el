@@ -1,4 +1,5 @@
 
+;;; powerline
 (require 'powerline)
 (powerline-default)
 
@@ -18,7 +19,7 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
-;;;
+;;; auto-complete
 (require 'auto-complete-config)
 ;(add-to-list 'ac-dictionary-directories (concat depends-dir "auto-complete/dict"))
 (ac-config-default)
@@ -27,6 +28,6 @@
 (add-to-list 'ac-modes 'haskell-mode)
 (add-to-list 'ac-modes 'js2-mode)
 
-;;;
+;;; yas-snippet
 (delete "~/.emacs.d/snippets" yas-snippet-dirs)
 (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))

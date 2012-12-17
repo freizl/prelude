@@ -36,13 +36,13 @@
   '(progn
      (defun prelude-js2-mode-defaults ()
        (setq js2-basic-offset 3)
-        (setq js2-cleanup-whitespace t)
-        (setq js2-enter-indents-newline nil)
-        (setq js2-indent-on-enter-key nil)
-        (local-set-key [f8] 'hs-toggle-hiding))
+       (setq js2-cleanup-whitespace t)
+       (setq js2-enter-indents-newline nil)
+       (setq js2-indent-on-enter-key nil)
+       (local-set-key [f8] 'hs-toggle-hiding))
 
      (setq prelude-js2-mode-hook 'prelude-js2-mode-defaults)
-    
+
      (add-hook 'js2-mode-hook (lambda () (hs-minor-mode t)))
      (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js2-mode-hook)))))
 
