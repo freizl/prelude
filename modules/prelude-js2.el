@@ -32,9 +32,6 @@
 
 (require 'prelude-programming)
 
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
 (eval-after-load 'js2-mode
   '(progn
      (defun prelude-js2-mode-defaults ()
@@ -51,6 +48,9 @@
 
      (add-hook 'js2-mode-hook (lambda () (hs-minor-mode t)))
      (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js2-mode-hook)))))
+
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 (provide 'prelude-js2)
 
