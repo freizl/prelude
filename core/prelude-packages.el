@@ -44,7 +44,7 @@
 
 (defvar prelude-packages
   '(ack-and-a-half exec-path-from-shell expand-region gist guru-mode helm helm-projectile magit magithub melpa
-                   rainbow-mode volatile-highlights yasnippet solarized-theme zenburn-theme 
+                   rainbow-mode volatile-highlights yasnippet solarized-theme zenburn-theme
                    powerline golden-ratio auto-complete)
   "A list of packages to ensure are installed at launch.")
 
@@ -90,7 +90,7 @@
     ("\\.sass\\'" sass-mode sass-mode)
     ("\\.scala\\'" scala-mode scala-mode)
     ("\\.scss\\'" scss-mode scss-mode)
-    ("\\.js\\'" js2-mode js2-mode)
+    ;("\\.js\\'" js2-mode js2-mode)
     ("\\.yml\\'" yaml-mode yaml-mode)))
 
 ;; markdown-mode doesn't have autoloads for the auto-mode-alist
