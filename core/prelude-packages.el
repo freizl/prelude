@@ -42,10 +42,11 @@
 ;; required because of a package.el bug
 (setq url-http-attempt-keepalives nil)
 
+;;; golden-ratio
 (defvar prelude-packages
-  '(ack-and-a-half exec-path-from-shell expand-region gist guru-mode helm helm-projectile magit magithub melpa
+  '(ack-and-a-half elisp-slime-nav exec-path-from-shell expand-region gist guru-mode helm helm-projectile magit magithub melpa
                    rainbow-mode volatile-highlights yasnippet solarized-theme zenburn-theme
-                   powerline golden-ratio auto-complete)
+                   powerline  auto-complete)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
@@ -88,7 +89,7 @@
     ("\\.php\\'" php-mode php-mode)
     ("\\.py\\'" python python-mode)
     ("\\.sass\\'" sass-mode sass-mode)
-    ("\\.scala\\'" scala-mode scala-mode)
+    ("\\.scala\\'" scala-mode2 scala-mode)
     ("\\.scss\\'" scss-mode scss-mode)
     ;("\\.js\\'" js2-mode js2-mode)
     ("\\.yml\\'" yaml-mode yaml-mode)))
@@ -101,9 +102,9 @@
 
 (-each prelude-auto-install-alist
   (lambda (entry)
-    (let ((extension (first entry))
-          (package (second entry))
-          (mode (third entry)))
+    (let ((extension (car entry))
+          (package (cadr entry))
+          (mode (cadr (cdr entry))))
       (unless (package-installed-p package)
         (prelude-auto-install extension package mode)))))
 
