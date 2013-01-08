@@ -33,3 +33,7 @@
 ;;; yas-snippet
 (delete "~/.emacs.d/snippets" yas-snippet-dirs)
 (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
+
+;;; 
+(require 'mustache-mode)
+
