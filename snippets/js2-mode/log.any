@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: log.any
-# key: log
+# key: log.a
 # --
 console.${1:log}("$0");
