@@ -2,5 +2,6 @@
 # name: fn.y
 # key: fn.y
 # --
-
-function $1 (${2:y}) { $0 }
+function (${1:x}) { 
+$0 
+}

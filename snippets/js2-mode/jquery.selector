@@ -2,4 +2,4 @@
 # name: jquery.selector
 # key: j.s
 # --
-$("$0")
+$("$1")$0

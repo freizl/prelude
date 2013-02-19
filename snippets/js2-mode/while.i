@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: while with i
-# key: wh
+# key: while.i
 # --
 
 var i = $1.length;
