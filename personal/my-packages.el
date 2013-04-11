@@ -14,6 +14,11 @@
 (global-set-key "\C-ca" 'org-agenda)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+(setq org-todo-keyword-faces
+      '(("BLOCK" . (:foreground "red" :weight bold))
+        ;("INPROGRESS" . org-warning) 
+        ))
+
 (defun org-summary-todo (n-done n-not-done)
   "Switch entry to DONE when all subentries are done, to TODO otherwise."
   (let (org-log-done org-log-states)   ; turn off logging
