@@ -16,7 +16,7 @@
 
 (setq org-todo-keyword-faces
       '(("BLOCK" . (:foreground "red" :weight bold))
-        ;("INPROGRESS" . org-warning) 
+        ("INPROGRESS" . (:foreground "#FF8800" :weight bold)) 
         ))
 
 (defun org-summary-todo (n-done n-not-done)
