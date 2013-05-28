@@ -1,12 +1,11 @@
 ;;; prelude-lisp.el --- Emacs Prelude: Configuration common to all lisp modes.
 ;;
-;; Copyright (c) 2011-2012 Bozhidar Batsov
+;; Copyright © 2011-2013 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/emacs-prelude
+;; URL: https://github.com/bbatsov/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
-;; Package-Requires: ((prelude-programming "1.0.0") (paredit "22") (rainbow-delimiters "1.3.4"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -53,6 +52,9 @@
   (whitespace-mode -1))
 
 (setq prelude-interactive-lisp-coding-hook 'prelude-interactive-lisp-coding-defaults)
+
+(eval-after-load "paredit"
+  '(diminish 'paredit-mode " π"))
 
 (provide 'prelude-lisp)
 

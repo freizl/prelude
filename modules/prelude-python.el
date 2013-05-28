@@ -1,12 +1,11 @@
 ;;; prelude-python.el --- Emacs Prelude: python.el configuration.
 ;;
-;; Copyright (c) 2011-2012 Bozhidar Batsov
+;; Copyright © 2011-2013 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/emacs-prelude
+;; URL: https://github.com/bbatsov/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
-;; Package-Requires: ((prelude-programming "1.0.0") (python "23.1"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -35,10 +34,10 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-ensure-module-deps '(python))
 
 (defun prelude-python-mode-defaults ()
-  (run-hooks 'prelude-prog-mode-hook) ;; run manually; not derived from prog-mode
+  "Defaults for Python programming."
+  (subword-mode +1)
   (electric-indent-mode -1))
 
 (setq prelude-python-mode-hook 'prelude-python-mode-defaults)
