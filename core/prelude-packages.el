@@ -101,12 +101,9 @@ PACKAGE is installed only if not already present.  The file is opened in MODE."
     ("\\.sass\\'" sass-mode sass-mode)
     ("\\.scala\\'" scala-mode2 scala-mode)
     ("\\.scss\\'" scss-mode scss-mode)
-<<<<<<< HEAD
     ;("\\.js\\'" js2-mode js2-mode)
-=======
     ("\\.slim\\'" slim-mode slim-mode)
     ("\\.textile\\'" textile-mode textile-mode)
->>>>>>> fb1164e37f8824c4e3c70c4fc17d823aa4116694
     ("\\.yml\\'" yaml-mode yaml-mode)))
 
 ;; markdown-mode doesn't have autoloads for the auto-mode-alist
