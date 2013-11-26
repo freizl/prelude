@@ -9,6 +9,7 @@
 
 (set-scroll-bar-mode nil)
 (setq-default tab-width 4)
+(set-language-environment "UTF-8")
 
 (when (fboundp 'global-font-lock-mode) (global-font-lock-mode t))
 (when (fboundp 'global-auto-revert-mode) (global-auto-revert-mode t))
