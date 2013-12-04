@@ -34,7 +34,7 @@
 
 (require 'prelude-programming)
 (require 'hs-lint)
-(prelude-ensure-module-deps '(haskell-mode))
+(prelude-require-packages '(haskell-mode))
 
 (eval-after-load 'haskell-mode
   '(progn
