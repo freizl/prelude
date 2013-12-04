@@ -101,7 +101,7 @@ PACKAGE is installed only if not already present.  The file is opened in MODE."
     ("\\.sass\\'" sass-mode sass-mode)
     ("\\.scala\\'" scala-mode2 scala-mode)
     ("\\.scss\\'" scss-mode scss-mode)
-    ;("\\.js\\'" js2-mode js2-mode)
+    ("\\.js\\'" js2-mode js2-mode)
     ("\\.slim\\'" slim-mode slim-mode)
     ("\\.textile\\'" textile-mode textile-mode)
     ("\\.yml\\'" yaml-mode yaml-mode)))
