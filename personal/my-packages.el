@@ -1,16 +1,16 @@
-;;; markdown
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "pandoc")
 
-;;; powerline
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; powerline
 (require 'powerline)
 (powerline-default)
 
-;;; FIXME: golden-ratio break buffer of `c-c h`
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FIXME: golden-ratio break buffer of `c-c h`
 ;(require 'golden-ratio)
 ;(golden-ratio-enable)
 
 
-;;; ORG Mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG Mode
 (global-set-key "\C-ca" 'org-agenda)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
@@ -26,7 +26,7 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
-;;; auto-complete
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; auto-complete
 (require 'auto-complete-config)
 ;(add-to-list 'ac-dictionary-directories (concat depends-dir "auto-complete/dict"))
 (ac-config-default)
@@ -35,10 +35,10 @@
 (add-to-list 'ac-modes 'haskell-mode)
 (add-to-list 'ac-modes 'js2-mode)
 
-;;; yas-snippet
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; yas-snippet
 (delete "~/.emacs.d/snippets" yas-snippet-dirs)
 (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
 
-;;; 
-(require 'mustache-mode)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;(require 'mustache-mode)
 
