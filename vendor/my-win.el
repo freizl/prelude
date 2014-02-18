@@ -1,7 +1,7 @@
 
 ;;; Special thing when working with windows
 
-(custom-set-faces '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
+(custom-set-faces '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "C:\\Users\\haiswu\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe")
@@ -13,9 +13,9 @@
 (global-set-key (kbd "C-,") 'set-mark-command)
 
 ;;; js-comint
-(setq inferior-js-program-command "java -jar C:/Users/haiswu/Downloads/rhino1_7R4/js.jar")
+; (setq inferior-js-program-command "java -jar C:/Users/haiswu/Downloads/rhino1_7R4/js.jar")
 
 (shell)
-(server-start)
+;(server-start)
 
 (provide 'my-win)
