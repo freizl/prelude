@@ -1,4 +1,4 @@
-
+(require 'prelude-ido)
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)
 (require 'prelude-erc)
