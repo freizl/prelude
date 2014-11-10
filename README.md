@@ -408,7 +408,6 @@ If you prefer Ido in everywhere, you should not add `prelude-helm-everywhere`, s
 You can always reactivate Helm with `(prelude-global-helm-global-mode-on)`.
 
 
->>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 #### Key-chords
 
 **Key-chords are available only when the `prelude-key-chord` module has been enabled.**
