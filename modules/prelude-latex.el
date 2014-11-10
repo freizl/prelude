@@ -32,8 +32,29 @@
 
 ;;; Code:
 
+<<<<<<< HEAD
 (prelude-require-packages '(auctex))
 (require 'smartparens-latex)
+=======
+(prelude-require-packages '(auctex cdlatex))
+(require 'smartparens-latex)
+;; for case
+(require 'cl)
+
+(eval-after-load "company"
+  '(progn
+     (prelude-require-packages '(company-auctex))
+     (company-auctex-init)))
+
+(defcustom prelude-latex-fast-math-entry 'LaTeX-math-mode
+  "Method used for fast math symbol entry in LaTeX."
+  :link '(function-link :tag "AUCTeX Math Mode" LaTeX-math-mode)
+  :link '(emacs-commentary-link :tag "CDLaTeX" "cdlatex.el")
+  :group 'prelude
+  :type '(choice (const :tag "None" nil)
+                 (const :tag "AUCTeX Math Mode" LaTeX-math-mode)
+                 (const :tag "CDLaTeX" cdlatex)))
+>>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 
 ;; AUCTeX configuration
 (setq TeX-auto-save t)
@@ -57,9 +78,19 @@
           ("HTML Viewer" "open %o"))))
 
 (defun prelude-latex-mode-defaults ()
+<<<<<<< HEAD
   (turn-on-auto-fill)
   (abbrev-mode +1)
   (smartparens-mode +1))
+=======
+  "Default Prelude hook for `LaTeX-mode'."
+  (turn-on-auto-fill)
+  (abbrev-mode +1)
+  (smartparens-mode +1)
+  (case prelude-latex-fast-math-entry
+    (LaTeX-math-mode (LaTeX-math-mode 1))
+    (cdlatex (turn-on-cdlatex))))
+>>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 
 (setq prelude-latex-mode-hook 'prelude-latex-mode-defaults)
 

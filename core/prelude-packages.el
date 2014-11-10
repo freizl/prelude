@@ -36,7 +36,7 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 ;; set package-user-dir to be relative to Prelude install path
 (setq package-user-dir (expand-file-name "elpa" prelude-dir))
 (package-initialize)
@@ -48,6 +48,8 @@
     ack-and-a-half
     anzu
     browse-kill-ring
+    dash
+    discover-my-major
     diff-hl
     diminish
     easy-kill
@@ -56,8 +58,10 @@
     expand-region
     flycheck
     gist
+    git-timemachine
     gitconfig-mode
     gitignore-mode
+    god-mode
     grizzl
     guru-mode
     ov
@@ -134,12 +138,14 @@ PACKAGE is installed only if not already present.  The file is opened in MODE."
     ("\\.dart\\'" dart-mode dart-mode)
     ("\\.ex\\'" elixir-mode elixir-mode)
     ("\\.exs\\'" elixir-mode elixir-mode)
+    ("\\.elixir\\'" elixir-mode elixir-mode)
     ("\\.erl\\'" erlang erlang-mode)
     ("\\.feature\\'" feature-mode feature-mode)
     ("\\.go\\'" go-mode go-mode)
     ("\\.groovy\\'" groovy-mode groovy-mode)
     ("\\.haml\\'" haml-mode haml-mode)
     ("\\.hs\\'" haskell-mode haskell-mode)
+    ("\\.kv\\'" kivy-mode kivy-mode)
     ("\\.latex\\'" auctex LaTeX-mode)
     ("\\.less\\'" less-css-mode less-css-mode)
     ("\\.lua\\'" lua-mode lua-mode)
@@ -153,11 +159,12 @@ PACKAGE is installed only if not already present.  The file is opened in MODE."
     ("\\.sass\\'" sass-mode sass-mode)
     ("\\.scala\\'" scala-mode2 scala-mode)
     ("\\.scss\\'" scss-mode scss-mode)
-    ("\\.js\\'" js2-mode js2-mode)
     ("\\.slim\\'" slim-mode slim-mode)
     ("\\.swift\\'" swift-mode swift-mode)
     ("\\.textile\\'" textile-mode textile-mode)
+    ("\\.thrift\\'" thrift thrift-mode)
     ("\\.yml\\'" yaml-mode yaml-mode)
+    ("\\.yaml\\'" yaml-mode yaml-mode)
     ("Dockerfile\\'" dockerfile-mode dockerfile-mode)))
 
 ;; markdown-mode doesn't have autoloads for the auto-mode-alist

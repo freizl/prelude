@@ -34,6 +34,7 @@
 
 (prelude-require-packages '(guru-mode))
 
+<<<<<<< HEAD
 (defun prelude-ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
   (interactive)
@@ -87,6 +88,8 @@
 (eval-after-load 'prelude-mode
   '(define-key prelude-mode-map (kbd "C-c i") 'prelude-ido-goto-symbol))
 
+=======
+>>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 (defun prelude-local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t))
 
@@ -100,7 +103,10 @@ This functions should be added to the hooks of major modes for programming."
 
 ;; show the name of the current function definition in the modeline
 (require 'which-func)
+<<<<<<< HEAD
 (add-to-list 'which-func-modes 'ruby-mode)
+=======
+>>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 (which-function-mode 1)
 
 ;; in Emacs 24 programming major modes generally derive from a common
@@ -118,6 +124,12 @@ This functions should be added to the hooks of major modes for programming."
          '(((lambda (&rest _ignored)
               (prelude-smart-open-line-above)) "RET")))
 
+<<<<<<< HEAD
+=======
+;; enlist a more liberal guru
+(setq guru-warn-only t)
+
+>>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 (defun prelude-prog-mode-defaults ()
   "Default coding hook, useful with any programming language."
   (when (and (executable-find ispell-program-name)

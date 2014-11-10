@@ -42,14 +42,13 @@
        (subword-mode +1)
        (turn-on-haskell-doc-mode)
        (turn-on-haskell-indentation)
-       (local-set-key "\C-cl" 'hs-lint))
+       (interactive-haskell-mode +1))
 
      (setq prelude-haskell-mode-hook 'prelude-haskell-mode-defaults)
 
      (add-hook 'haskell-mode-hook (lambda ()
-                                    (run-hooks 'prelude-haskell-mode-hook)
-                                    (local-set-key [f9] 'haskell-mode-stylish-buffer)))
+                                    (run-hooks 'prelude-haskell-mode-hook)))))
 
-     (add-to-list 'auto-mode-alist '("\\.tpl$" . nxml-mode))))
-     
 (provide 'prelude-haskell)
+
+;;; prelude-haskell.el ends here
