@@ -53,10 +53,7 @@
 (add-to-list 'auto-mode-alist '("\\.podspec\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Puppetfile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Berksfile\\'" . ruby-mode))
-<<<<<<< HEAD
-=======
 (add-to-list 'auto-mode-alist '("Appraisals\\'" . ruby-mode))
->>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 
 ;; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")

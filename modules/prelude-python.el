@@ -33,14 +33,6 @@
 
 ;;; Code:
 
-<<<<<<< HEAD
-(require 'prelude-programming)
-
-(defun prelude-python-mode-defaults ()
-  "Defaults for Python programming."
-  (subword-mode +1)
-  (electric-indent-mode -1))
-=======
 (prelude-require-package 'anaconda-mode)
 
 (when (boundp 'company-backends)
@@ -108,16 +100,12 @@
   (add-hook 'post-self-insert-hook
             #'electric-layout-post-self-insert-function nil 'local)
   (add-hook 'after-save-hook 'prelude-python-mode-set-encoding nil 'local))
->>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 
 (setq prelude-python-mode-hook 'prelude-python-mode-defaults)
 
 (add-hook 'python-mode-hook (lambda ()
                               (run-hooks 'prelude-python-mode-hook)))
-<<<<<<< HEAD
-=======
 
->>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 (provide 'prelude-python)
 
 ;;; prelude-python.el ends here

@@ -33,18 +33,7 @@
 ;;; Code:
 
 (require 'prelude-programming)
-<<<<<<< HEAD
 
-(eval-after-load 'js-mode
-  '(progn
-     (defun prelude-js-mode-defaults ()
-       ;; electric-layout-mode doesn't play nice with js-mode
-       (electric-layout-mode -1))
-
-     (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
-
-     (add-hook 'js-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook)))))
-=======
 (prelude-require-packages '(js2-mode json-mode))
 
 (require 'js2-mode)
@@ -64,7 +53,6 @@
      (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
 
      (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook)))))
->>>>>>> 21df465e4b017b9a80db7bfefd2369f7bfe6cb00
 
 (provide 'prelude-js)
 
