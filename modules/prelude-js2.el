@@ -35,7 +35,7 @@
 (eval-after-load 'js2-mode
   '(progn
      (defun prelude-js2-mode-defaults ()
-       (setq js2-basic-offset 3)
+       (setq js2-basic-offset 4)
        (setq js2-cleanup-whitespace t)
        (setq js2-enter-indents-newline nil)
        (setq js2-indent-on-enter-key nil)

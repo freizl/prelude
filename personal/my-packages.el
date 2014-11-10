@@ -16,7 +16,7 @@
 
 (setq org-todo-keyword-faces
       '(("BLOCK" . (:foreground "red" :weight bold))
-        ("INPROGRESS" . (:foreground "#FF8800" :weight bold)) 
+        ("INPROGRESS" . (:foreground "#FF8800" :weight bold))
         ))
 
 (defun org-summary-todo (n-done n-not-done)
@@ -39,6 +39,5 @@
 ;(delete "~/.emacs.d/snippets" yas-snippet-dirs)
 (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(require 'mustache-mode)
-
