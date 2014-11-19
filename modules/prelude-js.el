@@ -33,7 +33,6 @@
 ;;; Code:
 
 (require 'prelude-programming)
-
 (prelude-require-packages '(js2-mode json-mode))
 
 (require 'js2-mode)

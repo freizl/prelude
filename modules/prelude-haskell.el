@@ -32,8 +32,8 @@
 
 ;;; Code:
 
-(require 'prelude-programming)
 (require 'hs-lint)
+(require 'prelude-programming)
 (prelude-require-packages '(haskell-mode))
 
 (eval-after-load 'haskell-mode
