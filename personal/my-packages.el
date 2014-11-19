@@ -1,3 +1,5 @@
+(prelude-require-packages '(powerline auto-complete))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "pandoc")
 

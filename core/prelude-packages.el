@@ -74,8 +74,6 @@
     smartrep
     undo-tree
     volatile-highlights
-    powerline
-    auto-complete
     zenburn-theme)
   "A list of packages to ensure are installed at launch.")
 
