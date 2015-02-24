@@ -1,4 +1,4 @@
-(prelude-require-packages '(powerline auto-complete))
+(prelude-require-packages '(powerline auto-complete elm-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "pandoc")
@@ -11,6 +11,9 @@
 ;(require 'golden-ratio)
 ;(golden-ratio-enable)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Elm mode
+(require 'elm-mode)
+(add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG Mode
 (global-set-key "\C-ca" 'org-agenda)
@@ -19,6 +22,7 @@
 (setq org-todo-keyword-faces
       '(("BLOCK" . (:foreground "red" :weight bold))
         ("INPROGRESS" . (:foreground "#FF8800" :weight bold))
+        ("CODEREVIEW" . (:foreground "#ddfade" :weight bold))
         ))
 
 (defun org-summary-todo (n-done n-not-done)
