@@ -393,6 +393,8 @@ indent yanked text (with prefix arg don't indent)."
 
 ;; operate-on-number
 (require 'operate-on-number)
+(require 'smartrep)
+
 (smartrep-define-key global-map "C-c ."
   '(("+" . apply-operation-to-number-at-point)
     ("-" . apply-operation-to-number-at-point)
