@@ -1,4 +1,4 @@
-(prelude-require-packages '(powerline auto-complete elm-mode))
+(prelude-require-packages '(powerline auto-complete elm-mode skewer-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "pandoc")
@@ -45,5 +45,10 @@
 ;(delete "~/.emacs.d/snippets" yas-snippet-dirs)
 (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
+;;;
+;; (skewer-setup)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mustache
+;;;
 ;(require 'mustache-mode)

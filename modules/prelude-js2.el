@@ -35,13 +35,13 @@
 (eval-after-load 'js2-mode
   '(progn
      (defun prelude-js2-mode-defaults ()
-       (set-variable indent-tabs-mode 1)
        (setq js2-basic-offset 4)
        (setq js2-cleanup-whitespace t)
        (setq js2-enter-indents-newline nil)
        (setq js2-indent-on-enter-key nil)
        (setq js2-pretty-multiline-declarations t)
        (setq js2-global-externs (list "$" "jQuery" "window" "document" "define" "require"))
+       (setq indent-tabs-mode 1)
        (require 'js2-imenu-extras)
        (js2-imenu-extras-setup)
        (local-set-key [f8] 'hs-toggle-hiding))
