@@ -10,3 +10,10 @@ cp sample/prelude-modules-freizl.el ./prelude-modules.el
 ```
 apt-get install texlive texlive-latex-extra
 ```
+
+# ctag
+
+```
+cd /path/to/my/project
+find . 'something' | xargs etags -f TAGS
+```
