@@ -40,7 +40,9 @@
   '(progn
      (defun prelude-haskell-mode-defaults ()
        (subword-mode +1)
+       (setq haskell-process-suggest-remove-import-lines t)
        (turn-on-haskell-doc-mode)
+       (turn-on-haskell-decl-scan)
        (turn-on-haskell-indentation)
        (interactive-haskell-mode +1))
 
