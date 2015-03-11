@@ -2,6 +2,6 @@
 # name: fn.var
 # key: fn.v
 # --
-var ${1:method} = function($2) {
+var ${1:method} = function ($2) {
 $0
 }

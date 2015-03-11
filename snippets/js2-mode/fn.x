@@ -2,4 +2,4 @@
 # name: fn.x
 # key: fn.x
 # --
-function(x) { $0 }
+function (x) { $0 }
