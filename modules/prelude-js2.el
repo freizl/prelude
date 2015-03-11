@@ -40,7 +40,7 @@
        (setq js2-enter-indents-newline nil)
        (setq js2-indent-on-enter-key nil)
        (setq js2-pretty-multiline-declarations t)
-       (setq js2-global-externs (list "$" "jQuery" "window" "document" "define" "require"))
+       (setq js2-global-externs (list "$" "jQuery" "window" "document" "define" "require" "module"))
        (setq indent-tabs-mode 1)
        (require 'js2-imenu-extras)
        (js2-imenu-extras-setup)
