@@ -2,4 +2,4 @@
 # name: var.none
 # key: var.0
 # --
-$1 = $0;
+$1 = $0
