@@ -1,7 +1,7 @@
 (prelude-require-packages '(powerline auto-complete elm-mode skewer-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
-(setq markdown-command "pandoc")
+(setq markdown-command "$HOME/.cabal/bin/pandoc -s")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; powerline
 (require 'powerline)
@@ -48,7 +48,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
 ;;;
 (skewer-setup)
+(setq httpd-port 13579)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mustache
 ;;;
-;(require 'mustache-mode)
+(require 'mustache-mode)
