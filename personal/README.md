@@ -17,5 +17,5 @@ apt-get install texlive texlive-latex-extra
 
 ```
 cd /path/to/my/project
-find . 'something' | xargs etags -f TAGS
+find src -name '*.js' | xargs etags -f TAGS
 ```
