@@ -1,5 +1,7 @@
 (prelude-require-packages '(powerline auto-complete elm-mode skewer-mode))
 
+(setq magit-auto-revert-mode nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "$HOME/.cabal/bin/pandoc -s")
 
