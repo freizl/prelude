@@ -50,6 +50,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
 ;;;
 (skewer-setup)
+(add-hook 'web-mode-hook 'skewer-html-mode)
 (setq httpd-port 13579)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mustache
