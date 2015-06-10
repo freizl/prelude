@@ -38,14 +38,6 @@
       desktop-restore-eager 20
       desktop-dirname "/home/beanstock/bs/")
 
-;;; JS2 mode config agaist BSM's convension
-;;;
-;;; (setq-default indent-tabs-mode 1)
-(setq js2-basic-offset nil)
-(setq js2-bounce-indent-p t)
-(setq js2-strict-missing-semi-warning nil)
-;;(setq js2-global-externs (list "$" "jQuery" "window" "document" "define" "require"))
-
 
 ;;; Org Mode
 ;;;
@@ -65,8 +57,8 @@
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
-	 (require 'tern-auto-complete)
-	 (tern-ac-setup)))
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
 
 
 
