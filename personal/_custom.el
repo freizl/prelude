@@ -16,6 +16,13 @@
  )
 
 
+;;; Miscs
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
+(setq haskell-process-path-cabal "~/.cabal/bin/cabal")
+(global-set-key [remap other-window] 'ace-window)
+
+
 ;;; ERC Slack
 ;;;
 (defun start-slack ()
@@ -25,18 +32,14 @@
     (erc-tls :server "x.irc.slack.com" :port 6667 :nick "haisheng.wu" :password "")))
 
 (setq erc-autojoin-channels-alist '((".*\\.freenode.net" "#haskell-cn")
-                                    (".*\\.slack.com" "#cloudx-dev")
                                     ))
-
-
-(global-set-key [remap other-window] 'ace-window)
 
 ;;; Save session
 ;;;
 (desktop-save-mode 1)
 (setq desktop-path (quote ("~/.emacs.d/"))
       desktop-restore-eager 20
-      desktop-dirname "/home/beanstock/bs/")
+      desktop-dirname "$HOME/bs/")
 
 
 ;;; Org Mode
@@ -44,9 +47,6 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "INPROGRESS(i)" "CODEREVIEW(r)" "|" "DONE(d)")
         (sequence "|" "CANCELED(c)")))
-
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome")
 
 ;;; Tern
 ;;;
@@ -61,5 +61,3 @@
      (tern-ac-setup)))
 
 
-
-(setq haskell-process-path-cabal "~/.cabal/bin/cabal")
