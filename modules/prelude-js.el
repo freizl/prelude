@@ -47,11 +47,14 @@
      (defun prelude-js-mode-defaults ()
        ;; electric-layout-mode doesn't play nice with smartparens
        (setq-local electric-layout-rules '((?\; . after)))
+       (setq js2-cleanup-whitespace t)
+       (setq js2-global-externs (list "$" "jQuery" "window" "document" "define" "require" "module"))
        (setq mode-name "JS2")
        (js2-imenu-extras-mode +1))
 
      (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
 
+     (add-hook 'js2-mode-hook (lambda () (hs-minor-mode t)))
      (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook)))))
 
 (provide 'prelude-js)

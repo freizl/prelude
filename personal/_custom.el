@@ -59,5 +59,3 @@
   '(progn
      (require 'tern-auto-complete)
      (tern-ac-setup)))
-
-
