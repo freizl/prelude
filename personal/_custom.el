@@ -6,6 +6,10 @@
  '(erc-nick "haisheng")
  '(erc-notifications-mode t)
  '(httpd-port 13579)
+ ;;; those 2 config is quite nice to mac.
+ ;;; '(mac-command-modifier 'meta)
+ ;;; '( mac-option-modifier 'super)
+ ;;;
  '(org-agenda-files (quote ("~/bs/dev/working-org/"))))
 
 (custom-set-faces
