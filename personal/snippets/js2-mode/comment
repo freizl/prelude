@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: com
-# key: com
+# name: comment
+# key: comment
 # --
 /**
  * $0
