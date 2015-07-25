@@ -19,7 +19,11 @@
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
  '(org-agenda-files (quote ("~/daily/")))
- '(prelude-user-init-file "~/git/prelude/personal/"))
+ '(prelude-user-init-file "~/git/prelude/personal/")
+  ;;; see projectile readme for more details.
+ '(projectile-project-root-files-functions
+  (quote
+   (projectile-root-top-down projectile-root-bottom-up projectile-root-top-down-recurring))))
 
 
 (custom-set-faces

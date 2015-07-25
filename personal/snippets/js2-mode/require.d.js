@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: require
-# key: rjs.r
+# key: rjs.d
 # --
 define([
   $1
