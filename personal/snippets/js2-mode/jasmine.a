@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: jasmine.describe
+# key: jas.d
+# --
+
+describe('$1', function () {
+  $0
+});

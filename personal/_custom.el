@@ -25,6 +25,8 @@
   (quote
    (projectile-root-top-down projectile-root-bottom-up projectile-root-top-down-recurring))))
 
+;;; install org-bullets
+(custom-set-variables '(org-bullets-bullet-list (quote ("🐭" "🐮" "🐯" "🐰" "🐲" "🐍" "🐴" "🐑" "🙉" "🐔" "🐶" "🐷"))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

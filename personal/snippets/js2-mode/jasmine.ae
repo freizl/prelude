@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: jasmine.afterEach
+# key: jas.ae
+# --
+
+afterEach(function () {
+  $0
+});

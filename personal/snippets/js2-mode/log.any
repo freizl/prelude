@@ -2,4 +2,4 @@
 # name: log.any
 # key: log.a
 # --
-console.${1:log}("$0")
+console.${1:log}('$0');
