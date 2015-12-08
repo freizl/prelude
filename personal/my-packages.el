@@ -1,6 +1,8 @@
-(prelude-require-packages '(powerline auto-complete elm-mode skewer-mode))
+(prelude-require-packages '(powerline auto-complete elm-mode skewer-mode flx-ido))
 
 (setq magit-auto-revert-mode nil)
+
+(add-to-list 'auto-mode-alist '("\\.purs$" . haskell-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "$HOME/.cabal/bin/pandoc -s")
