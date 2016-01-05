@@ -1,11 +1,10 @@
-(prelude-require-packages '(powerline auto-complete elm-mode skewer-mode flx-ido))
-
-(setq magit-auto-revert-mode nil)
-
-(add-to-list 'auto-mode-alist '("\\.purs$" . haskell-mode))
+;;; package --- summary
+;;; Code:
+;;; Commentary:
+(prelude-require-packages '(powerline auto-complete elm-mode skewer-mode flx-ido org-bullets mustache-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
-(setq markdown-command "$HOME/.cabal/bin/pandoc -s")
+(setq markdown-command "~/.cabal/bin/pandoc -s")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; powerline
 (require 'powerline)
@@ -20,13 +19,22 @@
 (add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG Mode
+;;; install org-bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "INPROGRESS(i)" "CODEREVIEW(r)" "|" "DONE(d)")
+        (sequence "|" "CANCELED(c)")))
+
 (global-set-key "\C-ca" 'org-agenda)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 (setq org-todo-keyword-faces
       '(("BLOCK" . (:foreground "red" :weight bold))
         ("INPROGRESS" . (:foreground "#FF8800" :weight bold))
-        ("CODEREVIEW" . (:foreground "#ddfade" :weight bold))
+        ("CODEREVIEW" . (:foreground "#DDFADE" :weight bold))
+        ("CANCELED" . (:foreground "#C0C0C0" :weight bold))
         ))
 
 (defun org-summary-todo (n-done n-not-done)
@@ -58,3 +66,29 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mustache
 ;;;
 (require 'mustache-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ERC Slack
+;;;
+(defun start-slack ()
+  "Connect to IRC."
+  (interactive)
+  (when (y-or-n-p "Do you want to start Slack? ")
+    (erc-tls :server "x.irc.slack.com" :port 6667 :nick "haisheng.wu" :password "")))
+
+(setq erc-autojoin-channels-alist '((".*\\.freenode.net" "#haskell-cn")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Tern
+;;;
+;;; (setq tern-ac-on-dot t)
+(add-to-list 'load-path "~/Downloads/github.com/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
+
+
+(provide 'my-packages)
+;;; my-packages.el ends here
