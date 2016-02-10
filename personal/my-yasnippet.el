@@ -10,7 +10,6 @@
 (require 'yasnippet)
 ;;; (add-to-list 'yas-snippet-dirs prelude-snippets-dir)
 (add-to-list 'yas-snippet-dirs prelude-personal-snippets-dir)
-;(add-to-list 'yas-snippet-dirs prelude-personal-snippets-dir)
 (yas-global-mode 1)
 
 ;; term-mode does not play well with yasnippet

@@ -1,7 +1,8 @@
 ;;; package --- summary
 ;;; Code:
 ;;; Commentary:
-(prelude-require-packages '(powerline auto-complete elm-mode skewer-mode flx-ido org-bullets mustache-mode))
+(prelude-require-packages '(powerline auto-complete skewer-mode flx-ido org-bullets ack ag))
+;; elm-mode mustache-mode
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "~/.cabal/bin/pandoc -s")
@@ -15,8 +16,8 @@
 ;(golden-ratio-enable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Elm mode
-(require 'elm-mode)
-(add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
+;; (require 'elm-mode)
+;; (add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG Mode
 ;;; install org-bullets
@@ -24,17 +25,20 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "INPROGRESS(i)" "CODEREVIEW(r)" "|" "DONE(d)")
-        (sequence "|" "CANCELED(c)")))
+      '((sequence "TODO(t)" "BLOCK(b)")
+        (sequence "|" "INVESTIGATING(i)" "INPROGRESS(p)" "CODEREVIEW(r)" "MERGING(m)")
+        (sequence "|" "CANCELED(c)"  "DONE(d)")))
 
 (global-set-key "\C-ca" 'org-agenda)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 (setq org-todo-keyword-faces
-      '(("BLOCK" . (:foreground "red" :weight bold))
-        ("INPROGRESS" . (:foreground "#FF8800" :weight bold))
-        ("CODEREVIEW" . (:foreground "#DDFADE" :weight bold))
-        ("CANCELED" . (:foreground "#C0C0C0" :weight bold))
+      '(("BLOCK" . (:foreground "#F00000" :weight bold))
+        ("INVESTIGATING" . (:foreground "#F1D10D"))
+        ("INPROGRESS" . (:foreground "#007DC1" :weight bold))
+        ("CODEREVIEW" . (:foreground "#A9E6FD"))
+        ("MERGING" . (:foreground "#46B090"))
+        ("CANCELED" . (:foreground "#A7A7A7" ))
         ))
 
 (defun org-summary-todo (n-done n-not-done)
@@ -65,7 +69,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mustache
 ;;;
-(require 'mustache-mode)
+;;; (require 'mustache-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ERC Slack
 ;;;

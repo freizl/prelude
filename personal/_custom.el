@@ -7,15 +7,14 @@
    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
  '(erc-nick "haisheng")
  '(erc-notifications-mode t)
- '(flycheck-javascript-jshint-executable "~/node-tools/node_modules/jshint/bin/jshint")
- '(flycheck-jshintrc "~/.jshintrc")
+ ;'(flycheck-jshintrc "~/.jshintrc")
  '(httpd-port 13579)
  '(js2-basic-offset 2)
  '(magit-branch-arguments (quote ("")))
  '(magit-push-always-verify nil)
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
- '(org-agenda-files nil)
+ '(org-agenda-files (list "~/path/to/dir/"))
  '(org-bullets-bullet-list (quote ("🐭" "🐮" "🐯" "🐰" "🐲" "🐍" "🐴" "🐑" "🙉" "🐔" "🐶" "🐷")))
  '(org-html-html5-fancy t)
  '(prelude-user-init-file "~/git/prelude/personal/")
@@ -43,6 +42,6 @@
 ;;; Save session
 ;;;
 (desktop-save-mode 1)
-(setq desktop-path (quote ("$HOME/.emacs.d/"))
+(setq desktop-path (quote ("~/.emacs.d/"))
       desktop-restore-eager 20
-      desktop-dirname "$HOME/.emacs.d/")
+      desktop-dirname "~/.emacs.d/")
