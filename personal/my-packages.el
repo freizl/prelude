@@ -1,11 +1,15 @@
 ;;; package --- summary
 ;;; Code:
 ;;; Commentary:
-(prelude-require-packages '(powerline auto-complete skewer-mode flx-ido org-bullets ack ag))
+(prelude-require-packages '(powerline auto-complete skewer-mode flx-ido org-bullets ack ag which-key imenu-anywhere))
 ;; elm-mode mustache-mode
 
+
+(require 'which-key)
+(which-key-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
-(setq markdown-command "~/.cabal/bin/pandoc -s")
+(setq markdown-command "~/.local/bin/pandoc -s")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; powerline
 (require 'powerline)
@@ -25,8 +29,7 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "BLOCK(b)")
-        (sequence "|" "INVESTIGATING(i)" "INPROGRESS(p)" "CODEREVIEW(r)" "MERGING(m)")
+      '((sequence "TODO(t)" "INVESTIGATING(i)" "INPROGRESS(p)" "CODEREVIEW(r)" "MERGING(m)" "BLOCK(b)")
         (sequence "|" "CANCELED(c)"  "DONE(d)")))
 
 (global-set-key "\C-ca" 'org-agenda)
