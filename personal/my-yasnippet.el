@@ -1,4 +1,3 @@
-;(package-install 'yasnippet)
 (prelude-require-packages '(yasnippet))
 
 (defvar prelude-snippets-dir (expand-file-name "snippets" prelude-dir)
