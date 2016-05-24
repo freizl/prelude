@@ -1,7 +1,18 @@
 ;;; package --- summary
 ;;; Code:
 ;;; Commentary:
-(prelude-require-packages '(powerline auto-complete skewer-mode flx-ido org-bullets ack ag which-key imenu-anywhere))
+(prelude-require-packages '(powerline
+                            auto-complete
+                            skewer-mode
+                            flx-ido
+                            org-bullets
+                            ack
+                            ag
+                            which-key
+                            imenu-anywhere
+                            ;;tern
+                            ;;tern-auto-complete
+                            ))
 ;; elm-mode mustache-mode
 
 
