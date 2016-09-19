@@ -40,6 +40,8 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(setq org-html-doctype "html5")
+
 (setq org-todo-keywords
       '((sequence "TODO(t)" "INVESTIGATING(i)" "INPROGRESS(p)" "CODEREVIEW(r)" "MERGING(m)" "BLOCK(b)")
         (sequence "|" "CANCELED(c)"  "DONE(d)")))
@@ -101,7 +103,7 @@
 ;;; (setq tern-ac-on-dot t)
 (add-to-list 'load-path "~/Downloads/github.com/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
