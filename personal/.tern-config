@@ -1,0 +1,9 @@
+{
+    "libs": [
+        "browser",
+        "jquery"
+    ],
+    "loadEagerly": [],
+    "port": 64321,
+    "no-port-file": true
+}

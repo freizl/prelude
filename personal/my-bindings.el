@@ -1,3 +1,9 @@
+;;; my-bindings.el --- customized bindings
+
+;;; Commentary:
+
+;;; Code:
+
 
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (global-set-key (kbd "C-_") 'help-command)
@@ -14,3 +20,8 @@
 ;(global-set-key [f5] 'speedbar)
 ;(global-set-key [f6] 'browse-url)
 ;(global-set-key [S-f7] 'global-linum-mode)
+
+
+(provide 'my-bindings)
+
+;;; my-bindings.el ends here

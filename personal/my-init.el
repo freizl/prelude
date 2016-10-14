@@ -1,13 +1,22 @@
+;;; my-init.el --- customized settings
+
+;;; Commentary:
+
+;;; Code:
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Theme
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;(disable-theme 'zenburn)
 ;(load-theme 'whiteboard)
 
-(setq prelude-flyspell nil
-      global-hi-lock-mode 1
-      next-line-add-newlines t
-      kill-whole-line t
-      winner-mode t)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Misc
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(set-scroll-bar-mode nil)
+(global-set-key [remap other-window] 'ace-window)
 (setq-default tab-width 4)
 (set-language-environment "UTF-8")
 
@@ -15,6 +24,14 @@
 (when (fboundp 'global-auto-revert-mode) (global-auto-revert-mode t))
 
 (display-time)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Save session
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(desktop-save-mode 1)
+(setq desktop-path (quote ("~/.emacs.d/"))
+      desktop-restore-eager 20
+      desktop-dirname "~/.emacs.d/")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; backup and auto-saves
@@ -40,28 +57,23 @@
              (concat "#%" (buffer-name) "#")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;; Chinese Calendar
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq chinese-calendar-celestial-stem
-      ["甲" "乙" "丙" "丁" "戊" "己" "庚" "辛" "壬" "癸"]
-      chinese-calendar-terrestrial-branch
-      ["子" "丑" "寅" "卯" "辰" "巳" "午" "未" "申" "酉" "戌" "亥"])
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Auto-run / hooks
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ; Fix sth. for shell at Linux
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;
+;;;; for window
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun platform-special ()
   (cond ((eq system-type 'windows-nt)
          (message "load windows-nt special conf")
          (require 'my-win))))
-
 (platform-special)
+
+(provide 'my-init)
+
+;;; my-init.el ends here

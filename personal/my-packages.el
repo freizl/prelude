@@ -1,6 +1,7 @@
-;;; package --- summary
+;;; my-package.el --- customize packages
 ;;; Code:
 ;;; Commentary:
+
 (prelude-require-packages '(powerline
                             auto-complete
                             skewer-mode
@@ -10,10 +11,11 @@
                             ag
                             which-key
                             imenu-anywhere
-                            ;;tern
-                            ;;tern-auto-complete
+                            elm-mode
                             ))
 ;; elm-mode mustache-mode
+;; tern
+;; tern-auto-complete
 
 
 (require 'which-key)
@@ -32,8 +34,8 @@
 ;(golden-ratio-enable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Elm mode
-;; (require 'elm-mode)
-;; (add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
+(require 'elm-mode)
+(add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG Mode
 ;;; install org-bullets
@@ -75,14 +77,15 @@
 (add-to-list 'ac-modes 'js2-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; yas-snippet
-;(delete "~/.emacs.d/snippets" yas-snippet-dirs)
-(setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
+
+;;; (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
 ;;;
 (skewer-setup)
 (add-hook 'web-mode-hook 'skewer-html-mode)
 (setq httpd-port 13579)
+(httpd-start)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mustache
 ;;;
@@ -96,14 +99,19 @@
   (when (y-or-n-p "Do you want to start Slack? ")
     (erc-tls :server "x.irc.slack.com" :port 6667 :nick "haisheng.wu" :password "")))
 
-(setq erc-autojoin-channels-alist '((".*\\.freenode.net" "#haskell-cn")))
+;;; (setq erc-autojoin-channels-alist '((".*\\.freenode.net" "#haskell-cn")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Tern
 ;;;
-;;; (setq tern-ac-on-dot t)
-(add-to-list 'load-path "~/Downloads/github.com/tern/emacs/")
+
+;;(require 'tern)
+;;(require 'tern-auto-complete)
+
+(message (expand-file-name "tern" prelude-personal-dir))
+(add-to-list 'load-path (expand-file-name "tern/emacs" prelude-personal-dir))
 (autoload 'tern-mode "tern.el" nil t)
-;;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(setq tern-ac-on-dot t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
@@ -111,5 +119,19 @@
      (tern-ac-setup)))
 
 
+;; (defvar tern-known-port 13578)
+;; (defvar tern-explicit-port 13578)
+;; (start-process "Tern" nil "~/Downloads/github.com/tern/bin/tern" "--port 13578")
+;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (eval-after-load 'tern
+;;   '(progn
+;;      (require 'tern-auto-complete)
+;;      (tern-ac-setup)))
+
+;(add-to-list 'exec-path "~/Downloads/github.com/tern/bin/")
+
+
 (provide 'my-packages)
+
 ;;; my-packages.el ends here
