@@ -13,9 +13,8 @@
                             imenu-anywhere
                             elm-mode
                             ))
-;; elm-mode mustache-mode
-;; tern
-;; tern-auto-complete
+;; elm-mode
+;; mustache-mode
 
 
 (require 'which-key)
@@ -38,18 +37,18 @@
 (add-to-list 'auto-mode-alist '("\\.elm$" . elm-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORG Mode
-;;; install org-bullets
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(global-set-key "\C-ca" 'org-agenda)
+
 (setq org-html-doctype "html5")
+
+(setq org-agenda-include-diary t)
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "INVESTIGATING(i)" "INPROGRESS(p)" "CODEREVIEW(r)" "MERGING(m)" "BLOCK(b)")
         (sequence "|" "CANCELED(c)"  "DONE(d)")))
-
-(global-set-key "\C-ca" 'org-agenda)
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 (setq org-todo-keyword-faces
       '(("BLOCK" . (:foreground "#F00000" :weight bold))
@@ -65,6 +64,7 @@
   (let (org-log-done org-log-states)   ; turn off logging
     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
 
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; auto-complete
@@ -75,10 +75,6 @@
 (define-key ac-mode-map "\M-/" 'auto-complete)
 (add-to-list 'ac-modes 'haskell-mode)
 (add-to-list 'ac-modes 'js2-mode)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; yas-snippet
-
-;;; (setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
 ;;;
@@ -104,9 +100,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Tern
 ;;;
 
-;;(require 'tern)
-;;(require 'tern-auto-complete)
-
 (message (expand-file-name "tern" prelude-personal-dir))
 (add-to-list 'load-path (expand-file-name "tern/emacs" prelude-personal-dir))
 (autoload 'tern-mode "tern.el" nil t)
@@ -117,19 +110,6 @@
   '(progn
      (require 'tern-auto-complete)
      (tern-ac-setup)))
-
-
-;; (defvar tern-known-port 13578)
-;; (defvar tern-explicit-port 13578)
-;; (start-process "Tern" nil "~/Downloads/github.com/tern/bin/tern" "--port 13578")
-;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-;; (eval-after-load 'tern
-;;   '(progn
-;;      (require 'tern-auto-complete)
-;;      (tern-ac-setup)))
-
-;(add-to-list 'exec-path "~/Downloads/github.com/tern/bin/")
 
 
 (provide 'my-packages)
