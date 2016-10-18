@@ -100,14 +100,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Tern
 ;;;
 
-(message (expand-file-name "tern" prelude-personal-dir))
 (add-to-list 'load-path (expand-file-name "tern/emacs" prelude-personal-dir))
 (autoload 'tern-mode "tern.el" nil t)
 (setq tern-ac-on-dot t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
+     (setq tern-command (append tern-command '("--no-port-file" "--port 63210" "--persistent")))
      (require 'tern-auto-complete)
      (tern-ac-setup)))
 

@@ -24,6 +24,7 @@
 (when (fboundp 'global-auto-revert-mode) (global-auto-revert-mode t))
 
 (display-time)
+(appt-activate 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Save session
