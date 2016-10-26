@@ -36,12 +36,22 @@
  '(next-line-add-newlines t)
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
- '(org-agenda-files (list "~/okta/Box Sync/org/"))
+ '(org-agenda-files
+   (list "~/okta/Box Sync/org" "~/okta/Box Sync/org/sharings" "~/okta/Box Sync/org/data-models"))
+ '(org-babel-load-languages
+   (quote
+    ((emacs-lisp . t)
+     (haskell . t)
+     (plantuml . t)
+     (js . t)
+     (dot . t))))
  '(org-bullets-bullet-list (quote ("🐭" "🐮" "🐯" "🐰" "🐲" "🐍" "🐴" "🐑" "🙉" "🐔" "🐶" "🐷")))
- '(org-html-doctype "html5" t)
+ '(org-confirm-babel-evaluate nil)
+ '(org-html-doctype "html5")
  '(org-html-html5-fancy t)
+ '(org-plantuml-jar-path (expand-file-name "plantuml.jar" prelude-personal-dir))
  '(prelude-flyspell nil)
- '(prelude-user-init-file "~/git/prelude/personal/")
+ '(prelude-user-init-file (expand-file-name prelude-personal-dir))
  '(projectile-enable-caching t)
  '(projectile-project-root-files-functions
    (quote
