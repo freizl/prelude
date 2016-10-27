@@ -3,7 +3,9 @@
 ;;; Commentary:
 
 (prelude-require-packages '(powerline
-                            auto-complete
+                            company-emoji
+                            company-web
+                            company-tern
                             skewer-mode
                             flx-ido
                             org-bullets
@@ -13,13 +15,18 @@
                             imenu-anywhere
                             elm-mode
                             ))
-;; elm-mode
 ;; mustache-mode
 
 
 (require 'which-key)
 (which-key-mode)
 (which-key-setup-side-window-right-bottom)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; company
+
+(add-to-list 'company-backends 'company-emoji)
+(add-to-list 'company-backends 'company-web)
+(add-to-list 'company-backends 'company-tern)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "~/.local/bin/pandoc -s")
@@ -70,14 +77,14 @@
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; auto-complete
-(require 'auto-complete-config)
-;(add-to-list 'ac-dictionary-directories (concat depends-dir "auto-complete/dict"))
-(ac-config-default)
-(setq ac-auto-start nil)
-(define-key ac-mode-map "\M-/" 'auto-complete)
-(add-to-list 'ac-modes 'haskell-mode)
-(add-to-list 'ac-modes 'js2-mode)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; auto-complete =====> Company Mode
+;;; (require 'auto-complete-config)
+;;; (add-to-list 'ac-dictionary-directories (concat depends-dir "auto-complete/dict"))
+;;; (ac-config-default)
+;;; (setq ac-auto-start nil)
+;;; (define-key ac-mode-map "\M-/" 'auto-complete)
+;;; (add-to-list 'ac-modes 'haskell-mode)
+;;; (add-to-list 'ac-modes 'js2-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
 ;;;
@@ -110,8 +117,9 @@
 (eval-after-load 'tern
   '(progn
      (setq tern-command (append tern-command '("--no-port-file" "--port 63210" "--persistent")))
-     (require 'tern-auto-complete)
-     (tern-ac-setup)))
+     ;(require 'tern-auto-complete)
+     ;(tern-ac-setup)
+     ))
 
 
 (provide 'my-packages)

@@ -47,6 +47,7 @@
      (dot . t))))
  '(org-bullets-bullet-list (quote ("🐭" "🐮" "🐯" "🐰" "🐲" "🐍" "🐴" "🐑" "🙉" "🐔" "🐶" "🐷")))
  '(org-confirm-babel-evaluate nil)
+ '(org-hide-block-startup t)
  '(org-html-doctype "html5")
  '(org-html-html5-fancy t)
  '(org-plantuml-jar-path (expand-file-name "plantuml.jar" prelude-personal-dir))
