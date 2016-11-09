@@ -5,7 +5,7 @@
 (prelude-require-packages '(powerline
                             company-emoji
                             company-web
-                            company-tern
+                            ;;company-tern
                             skewer-mode
                             flx-ido
                             org-bullets
@@ -26,7 +26,7 @@
 
 (add-to-list 'company-backends 'company-emoji)
 (add-to-list 'company-backends 'company-web)
-(add-to-list 'company-backends 'company-tern)
+;;(add-to-list 'company-backends 'company-tern)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 (setq markdown-command "~/.local/bin/pandoc -s")
@@ -50,14 +50,17 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-c\C-xg" 'org-feed-update-all) ;;; see section 9.3 RSS Feeds
 
+(setenv "GRAPHVIZ_DOT" "/opt/local/bin/dot")
 (setq org-html-doctype "html5")
 
 (setq org-agenda-include-diary t)
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "INVESTIGATING(i)" "INPROGRESS(p)" "CODEREVIEW(r)" "MERGING(m)" "BLOCK(b)")
+      '((sequence "TODO(t)" "INVESTIGATING(v)" "INPROGRESS(i)" "CODEREVIEW(r)" "MERGING(m)" "BLOCK(b)")
         (sequence "|" "CANCELED(c)"  "DONE(d)")))
 
 (setq org-todo-keyword-faces
@@ -88,6 +91,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skewer mode
 ;;;
+
 (skewer-setup)
 (add-hook 'web-mode-hook 'skewer-html-mode)
 (setq httpd-port 13579)
@@ -109,18 +113,21 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Tern
 ;;;
-
-(add-to-list 'load-path (expand-file-name "tern/emacs" prelude-personal-dir))
-(autoload 'tern-mode "tern.el" nil t)
-(setq tern-ac-on-dot t)
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-(eval-after-load 'tern
-  '(progn
-     (setq tern-command (append tern-command '("--no-port-file" "--port 63210" "--persistent")))
-     ;(require 'tern-auto-complete)
-     ;(tern-ac-setup)
-     ))
-
+;;; FIXME: - multiple tern processes have been started across project (messy)
+;;;        - really hard to config one instance (without .port-file) (😿)
+;;;        - maybe fock the tern.el and modify for simplicity??
+;;;
+;;;
+;;; (add-to-list 'load-path (expand-file-name "tern/emacs" prelude-personal-dir))
+;;; (autoload 'tern-mode "tern.el" nil t)
+;;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;;;
+;;; (eval-after-load 'tern
+;;;   '(progn
+;;;      (setq tern-command (append tern-command '("--no-port-file" "--port 63210" "--persistent")))
+;;;      (setq tern-known-port 63210)
+;;;      ))
+;;;
 
 (provide 'my-packages)
 
