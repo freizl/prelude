@@ -57,12 +57,9 @@
  '(org-enforce-todo-checkbox-dependencies t)
  '(org-export-backends (quote (ascii beamer html latex md)))
  '(org-hide-block-startup t)
- '(org-html-doctype "html5")
+ '(org-html-doctype "html5" t)
  '(org-html-html5-fancy t)
  '(org-html-postamble nil)
- '(org-html-postamble-format
-   (quote
-    (("en" "<p><span class=\"author\">Author: %a (%e) by <span class=\"date\">Date: %d</span></p>"))))
  '(org-plantuml-jar-path (expand-file-name "plantuml.jar" prelude-personal-dir))
  '(org-use-speed-commands t)
  '(prelude-flyspell nil)

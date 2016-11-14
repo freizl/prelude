@@ -9,7 +9,10 @@
 ;;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;(disable-theme 'zenburn)
+(disable-theme 'zenburn)
+(load-theme 'material)
+;(load-theme 'material-light)
+;(load-theme 'leuven)
 ;(load-theme 'whiteboard)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -19,6 +22,8 @@
 (global-set-key [remap other-window] 'ace-window)
 (setq-default tab-width 4)
 (set-language-environment "UTF-8")
+
+(set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
 
 (when (fboundp 'global-font-lock-mode) (global-font-lock-mode t))
 (when (fboundp 'global-auto-revert-mode) (global-auto-revert-mode t))

@@ -14,7 +14,7 @@
                             which-key
                             imenu-anywhere
                             elm-mode
-                            ))
+                            material-theme))
 ;; mustache-mode
 
 
@@ -25,7 +25,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; company
 
 (add-to-list 'company-backends 'company-emoji)
-(add-to-list 'company-backends 'company-web)
+(add-to-list 'company-backends 'company-web-html)
 ;;(add-to-list 'company-backends 'company-tern)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
@@ -53,6 +53,9 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-c\C-xg" 'org-feed-update-all) ;;; see section 9.3 RSS Feeds
+
+(setq org-feed-alist '(("Morning Paper" "https://blog.acolyer.org/feed/" "~/.emacs.d/rss.org" "Morning Paper")
+                       ("Hueniverse" "https://hueniverse.com/feed/" "~/.emacs.d/rss.org" "Hueniverse")))
 
 (setenv "GRAPHVIZ_DOT" "/opt/local/bin/dot")
 (setq org-html-doctype "html5")
