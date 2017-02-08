@@ -20,8 +20,8 @@
 ;;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(disable-theme 'zenburn)
-(load-theme 'material)
+(load-theme 'zenburn)
+;(load-theme 'material)
 ;(load-theme 'material-light)
 ;(load-theme 'leuven)
 ;(load-theme 'whiteboard)

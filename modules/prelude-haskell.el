@@ -32,12 +32,12 @@
 
 ;;; Code:
 
-(require 'hs-lint)
 (require 'prelude-programming)
+(prelude-require-packages '(haskell-mode))
 (require 'haskell-interactive-mode)
 (require 'haskell-process)
+(require 'hs-lint)
 
-(prelude-require-packages '(haskell-mode))
 
 (eval-after-load 'haskell-mode
   '(progn
