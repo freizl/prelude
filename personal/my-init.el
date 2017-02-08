@@ -5,6 +5,17 @@
 ;;; Code:
 
 
+(require 'prelude-core)
+
+(prelude-install-search-engine "merriam-webster" "https://www.merriam-webster.com/dictionary/" "Merriam: ")
+(prelude-install-search-engine "hackage" "http://hackage.haskell.org/packages/search?terms=" "Hackage: ")
+(prelude-install-search-engine "wikipedia" "https://en.wikipedia.org/w/index.php?search=" "Wikipedia: ")
+
+(define-key prelude-mode-map (kbd "C-c C-m") 'prelude-merriam-webster)
+(define-key prelude-mode-map (kbd "C-c C-a") 'prelude-hackage)
+(define-key prelude-mode-map (kbd "C-c C-p") 'prelude-wikipedia)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

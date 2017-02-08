@@ -18,6 +18,9 @@
  '(chinese-calendar-celestial-stem ["甲" "乙" "丙" "丁" "戊" "己" "庚" "辛" "壬" "癸"])
  '(chinese-calendar-terrestrial-branch ["子" "丑" "寅" "卯" "辰" "巳" "午" "未" "申" "酉" "戌" "亥"])
  '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(display-time-mode t)
  '(erc-nick "haisheng")
  '(erc-notifications-mode t)
@@ -25,8 +28,13 @@
  '(global-hi-lock-mode 1)
  '(global-linum-mode nil)
  '(haskell-process-path-cabal "~/.cabal/bin/cabal")
+ '(haskell-process-suggest-remove-import-lines t)
+ '(haskell-process-auto-import-loaded-modules t)
+ '(haskell-process-log t)
+ ;;'(haskell-tags-on-save t)
  '(httpd-port 13579)
  '(js2-basic-offset 2)
+ '(js2-strict-trailing-comma-warning nil)
  '(json-reformat:indent-width 2)
  '(json-reformat:pretty-string\? t)
  '(kill-whole-line t)
@@ -34,6 +42,9 @@
  '(magit-branch-arguments (quote ("")))
  '(magit-push-always-verify nil)
  '(next-line-add-newlines t)
+ '(nrepl-message-colors
+   (quote
+    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
  '(org-babel-load-languages
@@ -62,6 +73,7 @@
  '(org-html-postamble nil)
  '(org-plantuml-jar-path (expand-file-name "plantuml.jar" prelude-personal-dir))
  '(org-use-speed-commands t)
+ '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(prelude-flyspell nil)
  '(prelude-user-init-file (expand-file-name prelude-personal-dir))
  '(projectile-enable-caching t)

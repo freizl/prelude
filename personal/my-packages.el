@@ -55,7 +55,9 @@
 (global-set-key "\C-c\C-xg" 'org-feed-update-all) ;;; see section 9.3 RSS Feeds
 
 (setq org-feed-alist '(("Morning Paper" "https://blog.acolyer.org/feed/" "~/.emacs.d/rss.org" "Morning Paper")
-                       ("Hueniverse" "https://hueniverse.com/feed/" "~/.emacs.d/rss.org" "Hueniverse")))
+                       ("Hueniverse" "https://hueniverse.com/feed/" "~/.emacs.d/rss.org" "Hueniverse")
+                       ("Leftover Salad comic" "http://www.leftoversalad.com/rss.php" "~/.emacs.d/rss.org" "Leftover Salad comic")
+                       ("Philip Wadler blog" "http://wadler.blogspot.com/feeds/posts/default?alt=rss" "~/.emacs.d/rss.org" "Philip Wadler blog")))
 
 (setenv "GRAPHVIZ_DOT" "/opt/local/bin/dot")
 (setq org-html-doctype "html5")
@@ -74,11 +76,6 @@
         ("MERGING" . (:foreground "#46B090"))
         ("CANCELED" . (:foreground "#A7A7A7" ))
         ))
-
-(defun org-summary-todo (n-done n-not-done)
-  "Switch entry to DONE when all subentries are done, to TODO otherwise."
-  (let (org-log-done org-log-states)   ; turn off logging
-    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
 
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)

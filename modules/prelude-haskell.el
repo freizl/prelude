@@ -34,6 +34,9 @@
 
 (require 'hs-lint)
 (require 'prelude-programming)
+(require 'haskell-interactive-mode)
+(require 'haskell-process)
+
 (prelude-require-packages '(haskell-mode))
 
 (eval-after-load 'haskell-mode
@@ -41,9 +44,13 @@
      (defun prelude-haskell-mode-defaults ()
        (subword-mode +1)
        (setq haskell-process-suggest-remove-import-lines t)
+       (setq haskell-compile-cabal-build-command "stack build")
+       (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
+       (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
        (turn-on-haskell-doc-mode)
        (turn-on-haskell-decl-scan)
        (turn-on-haskell-indentation)
+       (flyspell-prog-mode)
        (interactive-haskell-mode +1))
 
      (setq prelude-haskell-mode-hook 'prelude-haskell-mode-defaults)
