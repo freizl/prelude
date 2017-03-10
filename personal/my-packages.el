@@ -14,7 +14,9 @@
                             which-key
                             imenu-anywhere
                             elm-mode
-                            material-theme))
+                            material-theme
+                            plantuml-mode
+                            ))
 ;; mustache-mode
 
 
@@ -55,9 +57,11 @@
 (global-set-key "\C-c\C-xg" 'org-feed-update-all) ;;; see section 9.3 RSS Feeds
 
 (setq org-feed-alist '(("Morning Paper" "https://blog.acolyer.org/feed/" "~/.emacs.d/rss.org" "Morning Paper")
-                       ("Hueniverse" "https://hueniverse.com/feed/" "~/.emacs.d/rss.org" "Hueniverse")
-                       ("Leftover Salad comic" "http://www.leftoversalad.com/rss.php" "~/.emacs.d/rss.org" "Leftover Salad comic")
-                       ("Philip Wadler blog" "http://wadler.blogspot.com/feeds/posts/default?alt=rss" "~/.emacs.d/rss.org" "Philip Wadler blog")))
+                       ;; ("Hueniverse" "https://hueniverse.com/feed/" "~/.emacs.d/rss.org" "Hueniverse")
+                       ;; ("Leftover Salad comic" "http://www.leftoversalad.com/rss.php" "~/.emacs.d/rss.org" "Leftover Salad comic")
+                       ("Philip Wadler blog" "http://wadler.blogspot.com/feeds/posts/default?alt=rss" "~/.emacs.d/rss.org" "Philip Wadler blog")
+                       ("1Password Blog" "https://blog.agilebits.com/feed/" "~/.emacs.d/rss.org" "1Password Blog")
+                       ))
 
 (setenv "GRAPHVIZ_DOT" "/opt/local/bin/dot")
 (setq org-html-doctype "html5")

@@ -1,23 +1,23 @@
-;;; https://sites.google.com/site/steveyegge2/effective-emacs
+* TODO Backlog items
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TODO
-"""
-; auto-fill-mode?, break long line at word
-; what's fset?
-; diff between setq and setq-default? find it in Customerize section
-  ;;; set v.s. setq, find at Emacs Lisp introduction section #1.9
+  - auto-fill-mode?, break long line at word
+  - what's fset?
+  - diff between setq and setq-default? find it in Customerize section
+  - ;;; set v.s. setq, find at Emacs Lisp introduction section #1.9
+  -
+  - tab complete in shell mode / or env variable setting in eshell
+  - ;;; use term instead, but cant start term in Windows
+  - ;;;;;; if eshell, probably update LISP Var PATH. HOW? getenv/setenv
+  - ;;; if eshell, additional / was prefix into path while doing compile, can be resolved?
+  -
+  - outgoing email config at Windows/Linux
+  - abbrev-mode
 
-; tab complete in shell mode / or env variable setting in eshell
-  ;;; use term instead, but cant start term in Windows
-  ;;;;;; if eshell, probably update LISP Var PATH. HOW? getenv/setenv
-  ;;; if eshell, additional / was prefix into path while doing compile, can be resolved?
 
-; outgoing email config at Windows/Linux
+* dired mode
 
-; abbrev-mode
-"""
+#+BEGIN_SRC elisp
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; dired
 ;;  % d REGEXP <RET>
 ;;  % m REGEXP <RET>
 ;;  % g REGEXP <RET>
@@ -33,19 +33,31 @@
 ;;;; Refresh the Dired buffer using SWITCHES
 ;; `C-u s SWITCHES <RET>'
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Macro
+#+END_SRC
+
+* Macro
+
+#+BEGIN_SRC elisp
+
 ;; Save macro                  name-last-kbd-macro ; then insert-kbd-macro
 ;; call macro                  call-last-kbd-macro (C-x e)
 ;; plays macro util rings the bell, C-u 0 C-x e
 
-;;;;;;;;;;;;; Search
+#+END_SRC
+
+* Search
+
+#+BEGIN_SRC elisp
 ;; C-s C-w
 ;; C-w C-y
 ;; C-w M-y
 ;; C-s RETURN searchstr RETURN
 ;; C-s RETURN C-w searchstr RETURN
+#+END_SRC
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Funs / Vars
+* Funs / Vars
+
+#+BEGIN_SRC elisp
 ;; transpose                   C-t, M-t, C-x C-t
 ;; count-lines-region          M-=
 ;; mark-whole-buffer           C-x h
@@ -109,13 +121,18 @@
 ;; Let you go through all the history of copy and paste.    C-y M-y
 ;;
 ;; delete-trailing-whitespace
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ELISP
-
 ;; eval-print-last-sexp        C-j (at scratch buffer)
 ;; byte-recompile-directory
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; nXML mode
+;; insert line break in search or replace: C-q C-j
+
+#+END_SRC
+
+
+* nXML mode
+
+#+BEGIN_SRC elisp
+
 ;; indent-region C-M-\
 ;; M-q
 ;; C-M-u, C-M-d
@@ -132,16 +149,26 @@
 ;; C-c C-o C-d  Hide the children of the current element, as in emacs outline-mode.
 ;; C-c C-o C-s  Reverses the action of C-c C-o C-d, revealing the children of the current element.
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Shell Mode
+#+END_SRC
+
+* Shell Mode
+
+#+BEGIN_SRC elisp
+
 ;; default init scripts (Windows, it is BAT scripts though file ext is 'exe')  ~/.emacs_cmdproxy.exe
+#+END_SRC
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tutorial
-;; 8.2 numeric argument  M-1,M-2,...; C-u
-;; 8.9 Cursor Position
-;; 8.11 Repeat a Command C-x z
-;; 9.3 Completion        SPC, TAB
+* tutorial notes
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Others
+  - 8.2 numeric argument  M-1,M-2,...; C-u
+  - 8.9 Cursor Position
+  - 8.11 Repeat a Command C-x z
+  - 9.3 Completion        SPC, TAB
+
+* Others
+
+#+BEGIN_SRC elisp
+
 ; hi-lock-mode       c-x w h, c-x w p, c-x w r, c-x w l, etc
 ; follow-mode !!
 ; ioccur      C-up / C-down / Return
@@ -154,4 +181,130 @@
 ; all
 ; winner-mode, winner-undo, restore windows config after c-x 1
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;; eww
+#+END_SRC
+
+* Reading Org Model Manual
+  - org agenda view!!
+  - org mode + diary + agenda view
+  - org mode + plantuml
+  - org mode + schedule timestamp + agenda view
+  - ORDERED properties for TODO items
+  - ~org-enforce-todo-checkbox-dependencies~
+  - ~org-babel-load-languages~
+  - ~org-capture~
+  - ~org-export-backends~
+  - speed command
+    + (move cursor to beginning of headline and type ~?~ check
+      command list)
+  - org rss feed
+  - eww, built in browser
+  - footnotes: c-c c-x f
+  - estimation
+  - how to disable html export postamble?
+    + disable globally ~org-html-postamble~
+  - \iquest src code haskell isn't full functional
+    + probably cause it's running in REPL (GHCi)
+    + any customization?
+  - \iquest export PDF with source code result images
+    + because it doesn't support svg file well as default. ~includesvg~
+  - *11.3 literal source code ref is kind of cool !!*
+  - source code
+    + ~:exports~
+    + ~:tangle~
+    + ~:results~
+    + ~:dir~ and set it broadly??
+
+** Table Test
+
+| N | N^2 | N^3 | N^4 | sqrt(n) | sqrt(N) |
+|---+-----+-----+-----+---------+------------|
+| / |   < |     |   > |       < |          > |
+| 1 |   1 |   1 |   1 |       1 |          1 |
+| 2 |   4 |   8 |  16 |  1.4142 |     1.1892 |
+| 3 |   9 |  27 |  81 |  1.7321 |     1.3161 |
+|---+-----+-----+-----+---------+------------|
+#+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
+
+** Source code
+  - [[(xyz)][xyz source line]]
+
+#+BEGIN_SRC emacs-lisp -n -r -l ";;; %s"
+  ;;; start-file-process
+
+  (defun org-xor (a b)
+     "Exclusive or."
+     (if a (not b) b))                                                    ;;; xyz
+
+  ;;;
+#+END_SRC
+
+
+#+ATTR_HTML: :textarea t :width 20 :height 10
+#+BEGIN_SRC sh
+echo "hello"
+#+END_SRC
+
+#+BEGIN_SRC haskell -n :exports both :tangle yes
+let main = print "Hello Okta"; test = print 123 in main >> test
+
+#+END_SRC
+
+#+RESULTS:
+: Hello Okta
+
+#+NAME: factorial
+#+BEGIN_SRC haskell :results silent :exports code :var n=0
+
+fac :: Int -> Int
+let fac 0 = 1
+
+#+END_SRC
+
+- src_haskell{fac 5} =<interactive>:44:1: Not in scope: ‘fac’=
+
+#+NAME: addHaskell
+#+BEGIN_SRC haskell
+f :: Int -> Int
+let f = (+ 1)
+
+main :: IO ()
+main = do
+      putStrLn $ show $ f 1
+#+END_SRC
+
+#+RESULTS: add
+: 2
+
+
+#+NAME: addPython
+#+HEADER: :var a=2
+#+BEGIN_SRC python :results silent :exports code :var b=8
+return a + b;
+#+END_SRC
+
+#+CALL: addPython(a=3,b=10)
+
+#+INCLUDE: "~/.emacs" src emacs-lisp
+
+*** var
+     #+BEGIN_SRC sh :var filename=(buffer-file-name) :exports both
+       wc -w "$filename"
+     #+END_SRC
+
+     #+RESULTS:
+     : 628 /Users/haisheng.wu/okta/Box Sync/org/10-others/misc.org
+
+** Macro
+
+#+MACRO: hellom replacement text $1; welcome to org world $2;
+
+{{{hellom(arg1,arg2)}}}
+
+** Symbols - another cool thing!
+   - \alpha,\beta,\to,\gamma,\lambda,\Lambda,\pi,\Pi,\sum,\prod
+   - see variable ~org-entries~
+   - ~C-c C-x \~
+
+* Footnotes
+
+[fn:1] https://sites.google.com/site/steveyegge2/effective-emacs
