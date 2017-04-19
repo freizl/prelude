@@ -2,10 +2,19 @@
 ;;; Code:
 ;;; Commentary:
 
+;;
+;; material-theme
+;; mustache-mode
+;;
+;; perspective
+;; persp-projectile
+;; (persp-mode)
+;; (require 'persp-projectile)
+;;
+;; FIXME: company-tern
 (prelude-require-packages '(powerline
                             company-emoji
                             company-web
-                            ;;company-tern
                             skewer-mode
                             flx-ido
                             org-bullets
@@ -13,16 +22,15 @@
                             ag
                             which-key
                             imenu-anywhere
-                            elm-mode
-                            material-theme
                             plantuml-mode
+                            elm-mode
+                            keyfreq
                             ))
-;; mustache-mode
-
 
 (require 'which-key)
 (which-key-mode)
 (which-key-setup-side-window-right-bottom)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; company
 
@@ -37,10 +45,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; powerline
 (require 'powerline)
 (powerline-default-theme)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; FIXME: golden-ratio break buffer of `c-c h`
-;(require 'golden-ratio)
-;(golden-ratio-enable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Elm mode
 (require 'elm-mode)

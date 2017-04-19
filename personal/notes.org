@@ -308,3 +308,8 @@ return a + b;
 * Footnotes
 
 [fn:1] https://sites.google.com/site/steveyegge2/effective-emacs
+
+* Projectile
+  - how to clean unwanted Projects?
+    + projectile-remove-known-project
+    + ~/.emacs.d/projectile-bookmarks.eld~
