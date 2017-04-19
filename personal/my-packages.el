@@ -28,6 +28,7 @@
 
 (add-to-list 'company-backends 'company-emoji)
 (add-to-list 'company-backends 'company-web-html)
+(delete 'company-backends 'company-etags) ;;; FIXME to figure out better way to work with etags across projects.
 ;;(add-to-list 'company-backends 'company-tern)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
