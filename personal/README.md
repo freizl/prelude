@@ -19,3 +19,8 @@ apt-get install texlive texlive-latex-extra
 cd /path/to/my/project
 find src -name '*.js' | xargs etags -f TAGS
 ```
+
+# flycheck - eslint
+
+- https://github.com/flycheck/flycheck/issues/1155
+- easiest fix is to install eslint and all dependeies node module globally.

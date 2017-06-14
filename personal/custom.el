@@ -20,11 +20,10 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
+    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
  '(display-time-mode t)
  '(erc-nick "haisheng")
  '(erc-notifications-mode t)
- '(flycheck-scss-lint-executable "/usr/local/bin/scss-lint")
  '(global-hi-lock-mode 1)
  '(global-linum-mode nil)
  '(haskell-process-auto-import-loaded-modules t)
