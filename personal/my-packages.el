@@ -118,7 +118,7 @@
   (when (y-or-n-p "Do you want to start Slack? ")
     (erc-tls :server "x.irc.slack.com" :port 6667 :nick "haisheng.wu" :password "")))
 
-;;; (setq erc-autojoin-channels-alist '((".*\\.freenode.net" "#haskell-cn")))
+(setq erc-autojoin-channels-alist '(("freenode.net" "#haskell-cn" "#emacs" "#haskell")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Tern
 ;;;
