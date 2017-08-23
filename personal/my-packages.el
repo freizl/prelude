@@ -74,11 +74,11 @@
 (setq org-agenda-include-diary t)
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "INVESTIGATING(v)" "INPROGRESS(i)" "CODEREVIEW(r)" "MERGING(m)" "BLOCK(b)")
-        (sequence "|" "CANCELED(c)"  "DONE(d)")))
+      '((sequence "TODO(t)" "BLOCK(b)" "INVESTIGATING(v)" "INPROGRESS(i)" "CODEREVIEW(r)" "MERGING(m)" "DONE(d)")
+        (sequence "|" "CANCELED(c)")))
 
 (setq org-todo-keyword-faces
-      '(("BLOCK" . (:foreground "#F00000" :weight bold))
+      '(("BLOCK" . (:foreground "#E34843" :weight bold))
         ("INVESTIGATING" . (:foreground "#F1D10D"))
         ("INPROGRESS" . (:foreground "#007DC1" :weight bold))
         ("CODEREVIEW" . (:foreground "#A9E6FD"))
