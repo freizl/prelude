@@ -313,3 +313,8 @@ return a + b;
   - how to clean unwanted Projects?
     + projectile-remove-known-project
     + ~/.emacs.d/projectile-bookmarks.eld~
+* Add Info files
+
+#+BEGIN_SRC elisp
+(add-to-list 'Info-directory-list "~/.emacs.d/info")
+#+END_SRC

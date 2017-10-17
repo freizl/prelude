@@ -38,7 +38,9 @@
 (require 'haskell-process)
 (require 'hs-lint)
 
-
+;;; TODO: https://github.com/serras/emacs-haskell-tutorial/blob/master/tutorial.md
+;;;       http://haskell.github.io/haskell-mode/manual/latest/Introduction.html#Introduction
+;;;
 (eval-after-load 'haskell-mode
   '(progn
      (defun prelude-haskell-mode-defaults ()
@@ -51,6 +53,7 @@
        (turn-on-haskell-decl-scan)
        (turn-on-haskell-indentation)
        (flyspell-prog-mode)
+       (define-key haskell-mode-map [f8] 'haskell-navigate-imports)
        (interactive-haskell-mode +1))
 
      (setq prelude-haskell-mode-hook 'prelude-haskell-mode-defaults)
